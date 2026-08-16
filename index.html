@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌙 Good Night 🌙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to bottom,#020111,#0b1d51,#163b65,#1f5b87);
+position:relative;
+}
+
+/* Stars */
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:.2;transform:scale(.8);}
+to{opacity:1;transform:scale(1.4);}
+}
+
+/* Moon */
+.moon{
+position:absolute;
+top:50px;
+right:80px;
+width:140px;
+height:140px;
+background:#fff8dc;
+border-radius:50%;
+box-shadow:0 0 60px #fff8dc;
+}
+
+/* Card */
+.card{
+width:90%;
+max-width:650px;
+padding:40px;
+text-align:center;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 0 35px rgba(0,0,0,.4);
+z-index:10;
+}
+
+h1{
+font-size:60px;
+color:white;
+text-shadow:0 0 20px #87CEFA;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #87CEFA;}
+to{text-shadow:0 0 35px white;}
+}
+
+h2{
+color:#FFD700;
+margin-top:10px;
+font-size:26px;
+}
+
+p{
+margin-top:20px;
+font-size:19px;
+color:white;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:15px 30px;
+background:#4FC3F7;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:40px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+background:#29B6F6;
+}
+
+.footer{
+margin-top:20px;
+color:#ddd;
+font-size:15px;
+}
+
+/* Floating Hearts */
+.heart{
+position:absolute;
+bottom:-30px;
+font-size:22px;
+animation:floatUp linear infinite;
+opacity:.8;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<div class="card">
+
+<h1>🌙 Good Night Take Care 🌙</h1>
+
+<h2>Sweet Dreams ✨</h2>
+<h3> Darpan Sister ☺ </h3>
+<p>
+May your night be peaceful,<br>
+your dreams be beautiful,<br>
+and your tomorrow be full of happiness. 💙
+</p>
+
+<a href="#" class="btn" onclick="wish()">💤 Sweet Dreams</a>
+
+<div class="footer">
+⭐ Sleep Well • Dream Big ⭐
+<h4> Made By Sagar Mehta </h4>
+
+</div>
+
+</div>
+
+<script>
+
+/* Stars */
+for(let i=0;i<180;i++){
+
+let s=document.createElement("div");
+
+s.className="star";
+
+let size=Math.random()*3+1;
+
+s.style.width=size+"px";
+s.style.height=size+"px";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+
+s.style.animationDuration=(Math.random()*3+1)+"s";
+
+document.body.appendChild(s);
+
+}
+
+/* Hearts */
+
+for(let i=0;i<20;i++){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=["💙","💜","✨","🌙","⭐"][Math.floor(Math.random()*5)];
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.animationDuration=(Math.random()*6+6)+"s";
+
+h.style.fontSize=(Math.random()*18+18)+"px";
+
+document.body.appendChild(h);
+
+}
+
+/* Popup */
+
+function wish(){
+
+alert("🌙 Good Night 🌙\n\n✨ Sweet Dreams ✨\nMay tomorrow bring happiness, success and lots of smiles! 💙");
+
+}
+
+</script>
+
+</body>
+</html>
